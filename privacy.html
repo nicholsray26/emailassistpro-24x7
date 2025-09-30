@@ -85,7 +85,40 @@
       .card, .toc a { transition: box-shadow .2s, transform .2s }
       .card:hover { transform:translateY(-2px); box-shadow:0 16px 36px rgba(9,30,66,0.08) }
     }
-    
+    /* ---- Mobile Sidebar Fix ---- */
+@media screen and (max-width: 900px) {
+  .page {
+    display: block;            /* force one column */
+  }
+  .sidebar {
+    position: static;          /* remove sticky on mobile */
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .toc {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--soft-shadow);
+    padding: 8px;
+    gap: 6px;
+  }
+  .toc a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 6px 10px;
+    font-size: 13px;
+    border-radius: 8px;
+    background: rgba(0,114,206,0.05);
+  }
+  .toc a:hover {
+    background: rgba(0,114,206,0.15);
+  }
+}
+
   </style>
 </head>
 <body>
